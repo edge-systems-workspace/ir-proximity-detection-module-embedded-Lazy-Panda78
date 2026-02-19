@@ -19,11 +19,22 @@ int sensorState = 0;
  * @details
  * Starts the Serial port at 9600 baud for logging and configures `IR_PIN` as an input.
  * This function runs once after the microcontroller resets or powers up.
- * @author shre-coder638
- * @date 2026-02-17
+* @author Lazy-Panda78
+ * @date 2026-02-19
  */
 void setup() {
     Serial.begin(9600);
     pinMode(IR_PIN, INPUT);
     Serial.println("IR Obstacle Detection System Initialized");
+}
+void loop() {
+    sensorState = digitalRead(IR_PIN);
+
+    if (sensorState == LOW) {
+        Serial.println("Obstacle Detected");
+    } else {
+        Serial.println("No Obstacle");
+    }
+
+    delay(300);
 }
