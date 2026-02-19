@@ -22,3 +22,8 @@ int sensorState = 0;
  * @author shre-coder638
  * @date 2026-02-17
  */
+void setup() {
+    Serial.begin(9600);
+    pinMode(IR_PIN, INPUT);
+    Serial.println("IR Obstacle Detection System Initialized");
+}
