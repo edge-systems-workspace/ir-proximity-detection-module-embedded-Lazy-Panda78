@@ -35,6 +35,5 @@ void loop() {
     } else {
         Serial.println("No Obstacle");
     }
-
     delay(300);
 }
